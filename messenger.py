@@ -21,7 +21,7 @@ class Messenger():
                     'last_name': response.message.chat.last_name,
                     'message': response.message.text}
         except IndexError: # something goes wrong
-            return 'Not available ... please type something on your bot'
+            return None 
         
     def sendMessage(self, message):
         try:
