@@ -7,9 +7,11 @@ if __name__ == '__main__':
     bot.sendMessage('안녕하세요. 출근했습니다.')
     bot.sendMessage('관심 키워드를 입력하시면\n관련 기사 제목을 보여드립니다.')
     bot.sendMessage('좋은 하루 보내세요.')
-
+    print(old)
     while True:
+        bot = Messenger()
         new = bot.getMessage()
+        print(new)
         if new != old:
             response = bot.searchKeyword(new.get('message'))
             bot.sendMessage(response)
