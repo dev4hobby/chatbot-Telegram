@@ -1,6 +1,19 @@
+import time
 from messenger import Messenger
 
 if __name__ == '__main__':
-    my_bot = Messenger()
-    result = my_bot.searchKeyword('독감')
-    my_bot.sendMessage(result)
+    bot = Messenger()
+    old = None
+    bot.sendMessage('안녕하세요. 출근했습니다.')
+    bot.sendMessage('관심 키워드를 입력하시면\n관련 기사 제목을 보여드립니다.')
+    bot.sendMessage('좋은 하루 보내세요.')
+
+    while True:
+        new = bot.getMessage()
+        if new != old:
+            response = bot.searchKeyword(new.get('message'))
+            bot.sendMessage(response)
+            old = new
+            count+=1
+        time.sleep(1)
+

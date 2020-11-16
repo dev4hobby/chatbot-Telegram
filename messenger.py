@@ -16,10 +16,10 @@ class Messenger():
     
     def getMessage(self):
         try:
-            message = self.updates[-1]
-            return '{} {} : {}'.format(message.chat.first_name,
-                                       message.chat.last_name,
-                                       message.text)
+            response = self.updates[-1]
+            return {'first_name': response.message.chat.first_name,
+                    'last_name': response.message.chat.last_name,
+                    'message': response.message.text}
         except IndexError: # something goes wrong
             return 'Not available ... please type something on your bot'
         
