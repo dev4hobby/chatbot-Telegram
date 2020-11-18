@@ -1,4 +1,5 @@
 .env
+nohup.out
 .vscode
 __pycache__
 *.pyc
